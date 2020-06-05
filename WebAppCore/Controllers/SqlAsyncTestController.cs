@@ -45,7 +45,7 @@ namespace WebAppCore.Controllers
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                connection.Open();
+                await connection.OpenAsync();
                 var cmd = new SqlCommand("WAITFOR DELAY '00:00:20';", connection);
                 await cmd.ExecuteNonQueryAsync();
             }

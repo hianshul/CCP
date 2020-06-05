@@ -27,12 +27,12 @@ namespace WebAppCore.Controllers
         [Route("async")]
         public async Task<IActionResult> BlockAsync()
         {
-            //await Task.Delay(100000);
-            await Task.Factory.StartNew(() =>
-            {
-                Task.Yield();
-                Thread.Sleep(100000);
-            });
+            await Task.Delay(100000);
+            //await Task.Factory.StartNew(() =>
+            //{
+            //    Task.Yield();
+            //    Thread.Sleep(100000);
+            //});
             return Ok("BlockAsync completed");
         }
 
